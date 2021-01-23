@@ -34,13 +34,27 @@ sudo pkexec dmesg | grep -i bluetooth
 sudo apt install bluetooth rfkill bluez bluez-tools
 sudo apt install bluetooth rfkill gnome-bluetooth bluez bluez-tools
 
+# Identify video GPU(s):
+lspci | grep -E "VGA|3D"
+sudo lspci | grep VGA # Active GPU
+
+# README:
+firefox "https://wiki.debian.org/NVIDIA%20Optimus"
+firefox "https://wiki.debian.org/NvidiaGraphicsDrivers"
+
+
+
+
+# Install video drivers:
+sudo apt install bumblebee primus
+
 # Nvidia Quadro P520:
-sudo lspci | grep VGA
 sudo lshw -C video
 sudo pkexec dmesg | grep -i video
 # su
 # sudo echo "deb http://deb.debian.org/debian buster-backports main contrib non-free" >> /etc/apt/sources.list
 # exit
 sudo apt update
+sudo apt install -t buster-stable nvidia-driver firmware-misc-nonfree
 sudo apt install -t buster-backports nvidia-driver firmware-misc-nonfree
 sudo reboot
