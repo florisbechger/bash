@@ -1,0 +1,25 @@
+#!/bin/bash
+#
+# Virtualbox Package installation:
+
+# add repo:
+sudo rpm-ostree install config-manager --add-repo=https://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo
+
+# import signing keys:
+rpm --import https://www.virtualbox.org/download/oracle_vbox.asc
+
+# search for virtualbox:
+sudo rpm-ostree search virtualbox
+# VirtualBox-6.1.x86_64 : Oracle VM VirtualBox
+
+# install virtualbox:
+sudo rpm-ostree install VirtualBox-6.1
+
+# start virtualbox:
+sudo virtualbox
+
+sudo firewall-cmd --get-default-zone
+sudo firewall-cmd --permanent --zone=FedoraWorkstation --add-service=cockpit
+sudo firewall-cmd --reload
+
+
