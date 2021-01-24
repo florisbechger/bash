@@ -1,11 +1,9 @@
 
 # Partitioning example:
 
-640MB EFI
-80GB /
-80GB /var
-32GB swap
-4GB /tmp
-800GB /home
-
-
+640 MB EFI
+64 GB /
+960 GB /home
+4 GB /tmp
+48 GB swap
+(blank space)
