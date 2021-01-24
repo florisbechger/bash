@@ -17,6 +17,15 @@ sudo lshw -C memory
 # Network interfaces:
 sudo lshw -C network
 
+# Configure SSD trim:
+sudo systemctl enable fstrim.timer
+sudo systemctl start fstrim.timer
+
+# Low latency I/O for SATA ssd/hd:
+sudo apt install sysfsutils
+su
+echo "# block/nvme0n1/queue/scheduler = deadline" >> /etc/sysfs.conf # This is not a sata-drive, this is a nvme-drive, so comment out
+
 # WiFi + Bluetooth Driver firmware:
 sudo rfkill
 su # change to root
