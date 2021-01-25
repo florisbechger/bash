@@ -26,6 +26,12 @@ sudo apt install sysfsutils
 su
 echo "# block/nvme0n1/queue/scheduler = deadline" >> /etc/sysfs.conf # This is not a sata-drive, this is a nvme-drive, so comment out
 
+# WiFi + Bluetooth utilities:
+sudo pkexec dmesg | grep -i wifi
+sudo pkexec dmesg | grep -i bluetooth
+sudo apt install bluetooth rfkill bluez bluez-tools
+sudo apt install bluetooth rfkill gnome-bluetooth bluez bluez-tools -y
+
 # WiFi + Bluetooth Driver firmware:
 sudo rfkill
 su # change to root
@@ -36,12 +42,6 @@ cp intel/ibt-17-16-1.sfi /lib/firmware/intel
 cp intel/ibt-17-16-1.ddc /lib/firmware/intel
 exit
 sudo reboot
-
-# WiFi + Bluetooth utilities:
-sudo pkexec dmesg | grep -i wifi
-sudo pkexec dmesg | grep -i bluetooth
-sudo apt install bluetooth rfkill bluez bluez-tools
-sudo apt install bluetooth rfkill gnome-bluetooth bluez bluez-tools
 
 # Identify video GPU(s):
 lspci | grep -E "VGA|3D"
