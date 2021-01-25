@@ -1,6 +1,6 @@
 
 sudo apt update
-sudo apt install lshw -y
+sudo apt install git htop lshw neofetch -y
 
 # System Information:
 sudo pkexec dmidecode -t01
