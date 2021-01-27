@@ -34,9 +34,9 @@ sudo apt install bluetooth rfkill gnome-bluetooth bluez bluez-tools -y
 
 # WiFi + Bluetooth Driver firmware:
 sudo rfkill
-su # change to root
-sudo git clone git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+git clone git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
 cd /linux-firmware
+su # change to root
 cp iwlwifi-9000-pu-b0-jf-b0-38.ucode /lib/firmware
 mkdir /lib/firmware/intel
 cp intel/ibt-17-16-1.sfi /lib/firmware/intel
