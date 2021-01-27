@@ -46,14 +46,6 @@ ls -l /lib/firmware/intel
 exit
 sudo reboot
 
-# Identify video GPU(s):
-lspci | grep -E "VGA|3D"
-sudo lspci | grep VGA # Active GPU
-su
-apt install nvidia-detect -y
-nvidia-detect
-apt install nvidia-driver -y
-
 # Nvidia Quadro P520:
 sudo lshw -C video
 sudo pkexec dmesg | grep -i video
@@ -61,9 +53,16 @@ sudo pkexec dmesg | grep -i video
 # sudo echo "deb http://deb.debian.org/debian buster-backports main contrib non-free" >> /etc/apt/sources.list
 # exit
 sudo apt update
-sudo apt install -t buster-stable nvidia-driver firmware-misc-nonfree
+sudo apt install -t buster nvidia-driver firmware-misc-nonfree
 sudo apt install -t buster-backports nvidia-driver firmware-misc-nonfree
 sudo reboot
+
+# Identify video GPU(s):
+lspci | grep -E "VGA|3D"
+sudo lspci | grep VGA # Active GPU
+su
+# apt install nvidia-detect -y
+# nvidia-detect
 
 # README:
 firefox "https://wiki.debian.org/NVIDIA%20Optimus"
