@@ -52,6 +52,7 @@ sudo lspci | grep VGA # Active GPU
 su
 apt install nvidia-detect -y
 nvidia-detect
+apt install nvidia-driver -y
 
 # Nvidia Quadro P520:
 sudo lshw -C video
