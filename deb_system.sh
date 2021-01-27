@@ -67,3 +67,19 @@ su
 # README:
 firefox "https://wiki.debian.org/NVIDIA%20Optimus"
 firefox "https://wiki.debian.org/NvidiaGraphicsDrivers"
+
+# Sensors:
+
+sudo apt install acpi lm-sensors -y
+# sudo nano /etc/sensors3.conf
+
+sudo echo "" >> ~/.bashrc
+sudo echo "# Custom:" >> ~/.bashrc
+sudo echo "echo" >> ~/.bashrc
+sudo echo "sensors -A" >> ~/.bashrc
+sudo echo "acpi -b" >> ~/.bashrc
+sudo echo "acpi -t" >> ~/.bashrc
+sudo echo "acpi -a" >> ~/.bashrc
+sudo echo "echo" >> ~/.bashrc
+sudo echo "neofetch" >> ~/.bashrc
+
