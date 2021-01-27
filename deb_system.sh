@@ -49,16 +49,9 @@ sudo reboot
 # Identify video GPU(s):
 lspci | grep -E "VGA|3D"
 sudo lspci | grep VGA # Active GPU
-
-# README:
-firefox "https://wiki.debian.org/NVIDIA%20Optimus"
-firefox "https://wiki.debian.org/NvidiaGraphicsDrivers"
-
-
-
-
-# Install video drivers:
-sudo apt install bumblebee primus
+su
+apt install nvidia-detect -y
+nvidia-detect
 
 # Nvidia Quadro P520:
 sudo lshw -C video
@@ -70,3 +63,7 @@ sudo apt update
 sudo apt install -t buster-stable nvidia-driver firmware-misc-nonfree
 sudo apt install -t buster-backports nvidia-driver firmware-misc-nonfree
 sudo reboot
+
+# README:
+firefox "https://wiki.debian.org/NVIDIA%20Optimus"
+firefox "https://wiki.debian.org/NvidiaGraphicsDrivers"
