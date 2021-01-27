@@ -69,8 +69,8 @@ firefox "https://wiki.debian.org/NVIDIA%20Optimus"
 firefox "https://wiki.debian.org/NvidiaGraphicsDrivers"
 
 # Sensors:
-
 sudo apt install acpi lm-sensors -y
+sensors-detect
 # sudo nano /etc/sensors3.conf
 
 sudo echo "" >> ~/.bashrc
