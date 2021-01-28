@@ -41,8 +41,11 @@ cp iwlwifi-9000-pu-b0-jf-b0-38.ucode /lib/firmware
 mkdir /lib/firmware/intel
 cp intel/ibt-17-16-1.sfi /lib/firmware/intel
 cp intel/ibt-17-16-1.ddc /lib/firmware/intel
+mkdir /lib/firmware/i915
+cp i915/* /lib/firmware/i915
 ls -l /lib/firmware/
 ls -l /lib/firmware/intel
+ls -l /lib/firmware/i915
 exit
 sudo reboot
 
