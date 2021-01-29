@@ -3,28 +3,19 @@ sudo apt-get update
 sudo apt-get install git htop lshw neofetch -y
 
 # System Information:
-sudo pkexec dmidecode -t01
-
+sudo dmidecode -t01
 # System firmware:
-sudo pkexec dmesg | grep firmware
-
+sudo dmesg | grep firmware
 # System processor:
 sudo lshw -C processor
-
 # System memory:
 sudo lshw -C memory
-
 # Network interfaces:
 sudo lshw -C network
 
 # Configure SSD trim:
 sudo systemctl enable fstrim.timer
 sudo systemctl start fstrim.timer
-
-# Low latency I/O for SATA ssd/hd:
-sudo apt-get install sysfsutils
-su
-echo "# block/nvme0n1/queue/scheduler = deadline" >> /etc/sysfs.conf # This is not a sata-drive, this is a nvme-drive, so comment out
 
 # WiFi + Bluetooth utilities:
 sudo pkexec dmesg | grep -i wifi
@@ -50,28 +41,6 @@ ls -l /lib/firmware/i915
 exit
 sudo reboot
 
-# Nvidia Quadro P520:
-sudo lshw -C video
-sudo pkexec dmesg | grep -i video
-# su
-# sudo echo "deb http://deb.debian.org/debian buster-backports main contrib non-free" >> /etc/apt/sources.list
-# exit
-sudo apt-get update
-sudo apt-get install -t buster nvidia-driver firmware-misc-nonfree
-sudo apt-get install -t buster-backports nvidia-driver firmware-misc-nonfree
-sudo reboot
-
-# Identify video GPU(s):
-lspci | grep -E "VGA|3D"
-sudo lspci | grep VGA # Active GPU
-su
-# apt install nvidia-detect -y
-# nvidia-detect
-
-# README:
-firefox "https://wiki.debian.org/NVIDIA%20Optimus"
-firefox "https://wiki.debian.org/NvidiaGraphicsDrivers"
-
 # Sensors:
 sudo apt-get install acpi lm-sensors -y
 sensors-detect
@@ -87,3 +56,30 @@ sudo echo "acpi -a" >> ~/.bashrc
 sudo echo "echo" >> ~/.bashrc
 sudo echo "neofetch" >> ~/.bashrc
 
+# Identify video GPU(s):
+lspci | grep -E "VGA|3D"
+sudo lspci | grep VGA # Active GPU
+su
+# apt install nvidia-detect -y
+# nvidia-detect
+
+# Nvidia Quadro P520:
+sudo lshw -C video
+sudo pkexec dmesg | grep -i video
+# su
+# sudo echo "deb http://deb.debian.org/debian buster-backports main contrib non-free" >> /etc/apt/sources.list
+# exit
+sudo apt-get update
+sudo apt-get install -t buster nvidia-driver firmware-misc-nonfree
+sudo apt-get install -t buster-backports nvidia-driver firmware-misc-nonfree
+sudo reboot
+
+# Low latency I/O for SATA ssd/hd:
+sudo apt-get install sysfsutils
+su
+echo "# block/nvme0n1/queue/scheduler = deadline" >> /etc/sysfs.conf # This is not a sata-drive, this is a nvme-drive, so comment out
+
+# README:
+firefox "https://averagelinuxuser.com/debian-10-after-install"
+firefox "https://wiki.debian.org/NVIDIA%20Optimus"
+firefox "https://wiki.debian.org/NvidiaGraphicsDrivers"
