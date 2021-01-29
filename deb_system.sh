@@ -29,10 +29,12 @@ echo "# block/nvme0n1/queue/scheduler = deadline" >> /etc/sysfs.conf # This is n
 # WiFi + Bluetooth utilities:
 sudo pkexec dmesg | grep -i wifi
 sudo pkexec dmesg | grep -i bluetooth
-sudo apt install bluetooth rfkill bluez bluez-tools
+
+# sudo apt install bluetooth rfkill bluez bluez-tools
 sudo apt install bluetooth rfkill gnome-bluetooth bluez bluez-tools -y
 
-# WiFi + Bluetooth Driver firmware:
+# Driver firmware:
+sudo apt install firmware-linux-nonfree -y
 sudo rfkill
 git clone git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
 cd linux-firmware
