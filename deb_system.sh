@@ -1,6 +1,6 @@
 
 sudo apt-get update
-sudo apt-get install git htop lshw neofetch -y
+sudo apt-get install git gnome-power-manager htop lshw neofetch -y
 
 # System Information:
 sudo dmidecode -t01
@@ -21,13 +21,8 @@ sudo systemctl start fstrim.timer
 sudo pkexec dmesg | grep -i wifi
 sudo pkexec dmesg | grep -i bluetooth
 
-# sudo apt-get install bluetooth rfkill bluez bluez-tools
-sudo apt-get install bluetooth rfkill gnome-bluetooth bluez bluez-tools -y
-
 # Driver firmware:
-sudo apt-get install firmware-linux-nonfree -y
-sudo apt-get install watchdog -y
-sudo rfkill
+sudo apt-get install bluetooth bluez bluez-tools firmware-linux-nonfree gnome-bluetooth rfkill watchdog -y
 git clone git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
 cd linux-firmware
 su # change to root
