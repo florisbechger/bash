@@ -35,6 +35,7 @@ sudo apt install bluetooth rfkill gnome-bluetooth bluez bluez-tools -y
 
 # Driver firmware:
 sudo apt install firmware-linux-nonfree -y
+sudo apt-get install watchdog -y
 sudo rfkill
 git clone git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
 cd linux-firmware
