@@ -1,6 +1,6 @@
 
-sudo apt update
-sudo apt install git htop lshw neofetch -y
+sudo apt-get update
+sudo apt-get install git htop lshw neofetch -y
 
 # System Information:
 sudo pkexec dmidecode -t01
@@ -22,7 +22,7 @@ sudo systemctl enable fstrim.timer
 sudo systemctl start fstrim.timer
 
 # Low latency I/O for SATA ssd/hd:
-sudo apt install sysfsutils
+sudo apt-get install sysfsutils
 su
 echo "# block/nvme0n1/queue/scheduler = deadline" >> /etc/sysfs.conf # This is not a sata-drive, this is a nvme-drive, so comment out
 
@@ -30,11 +30,11 @@ echo "# block/nvme0n1/queue/scheduler = deadline" >> /etc/sysfs.conf # This is n
 sudo pkexec dmesg | grep -i wifi
 sudo pkexec dmesg | grep -i bluetooth
 
-# sudo apt install bluetooth rfkill bluez bluez-tools
-sudo apt install bluetooth rfkill gnome-bluetooth bluez bluez-tools -y
+# sudo apt-get install bluetooth rfkill bluez bluez-tools
+sudo apt-get install bluetooth rfkill gnome-bluetooth bluez bluez-tools -y
 
 # Driver firmware:
-sudo apt install firmware-linux-nonfree -y
+sudo apt-get install firmware-linux-nonfree -y
 sudo apt-get install watchdog -y
 sudo rfkill
 git clone git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
@@ -56,9 +56,9 @@ sudo pkexec dmesg | grep -i video
 # su
 # sudo echo "deb http://deb.debian.org/debian buster-backports main contrib non-free" >> /etc/apt/sources.list
 # exit
-sudo apt update
-sudo apt install -t buster nvidia-driver firmware-misc-nonfree
-sudo apt install -t buster-backports nvidia-driver firmware-misc-nonfree
+sudo apt-get update
+sudo apt-get install -t buster nvidia-driver firmware-misc-nonfree
+sudo apt-get install -t buster-backports nvidia-driver firmware-misc-nonfree
 sudo reboot
 
 # Identify video GPU(s):
@@ -73,7 +73,7 @@ firefox "https://wiki.debian.org/NVIDIA%20Optimus"
 firefox "https://wiki.debian.org/NvidiaGraphicsDrivers"
 
 # Sensors:
-sudo apt install acpi lm-sensors -y
+sudo apt-get install acpi lm-sensors -y
 sensors-detect
 # sudo nano /etc/sensors3.conf
 
