@@ -79,7 +79,6 @@ su
 echo "# block/nvme0n1/queue/scheduler = deadline" >> /etc/sysfs.conf # This is not a sata-drive, this is a nvme-drive, so comment out
 
 # README:
-firefox "https://vitux.com/how-to-improve-notebook-battery-life-in-debian-with-tlp/"
-firefox "https://averagelinuxuser.com/debian-10-after-install"
+firefox "https://linrunner.de/tlp/"
 firefox "https://wiki.debian.org/NVIDIA%20Optimus"
 firefox "https://wiki.debian.org/NvidiaGraphicsDrivers"
