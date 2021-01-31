@@ -1,6 +1,6 @@
 
 # Install Flatpak:
-sudo apt-get install flatpak flatpak-session-helper -y
+sudo apt-get install flatpak -y
 sudo apt-get install gnome-software-plugin-flatpak -y
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 sudo flatpak remotes # Flatpak synchronize
