@@ -4,7 +4,7 @@ sudo apt-get install flatpak -y
 sudo apt-get install gnome-software-plugin-flatpak -y
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 sudo flatpak remotes # Flatpak synchronize
-sudo flatpak install filezilla teams zoom -y
+sudo flatpak install filezilla geany libreoffice teams zoom -y
 
 # Install VirtualBox:
 cd ~/Downloads
