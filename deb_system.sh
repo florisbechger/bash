@@ -22,15 +22,14 @@ sudo pkexec dmesg | grep -i wifi
 sudo pkexec dmesg | grep -i bluetooth
 
 # Driver firmware:
-sudo apt-get install bluetooth bluez bluez-tools firmware-linux-nonfree gnome-bluetooth rfkill watchdog -y
+# sudo apt-get install bluetooth bluez bluez-tools firmware-linux-nonfree gnome-bluetooth rfkill watchdog -y
 git clone git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
 cd linux-firmware
-su # change to root
-cp iwlwifi-9000-pu-b0-jf-b0-38.ucode /lib/firmware
-mkdir /lib/firmware/intel
-cp intel/ibt-17-16-1.* /lib/firmware/intel
-mkdir /lib/firmware/i915
-cp i915/kbl_dmc_ver1_04.* /lib/firmware/i915
+sudo cp iwlwifi-9000-pu-b0-jf-b0-38.ucode /lib/firmware
+sudo mkdir /lib/firmware/intel
+sudo cp intel/ibt-17-16-1.* /lib/firmware/intel
+sudo mkdir /lib/firmware/i915
+sudo cp i915/kbl_dmc_ver1_04.* /lib/firmware/i915
 ls -l /lib/firmware/intel
 ls -l /lib/firmware/i915
 exit
