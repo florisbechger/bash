@@ -22,7 +22,7 @@ sudo pkexec dmesg | grep -i wifi
 sudo pkexec dmesg | grep -i bluetooth
 
 # Driver firmware:
-# sudo apt-get install bluetooth bluez bluez-tools firmware-linux-nonfree gnome-bluetooth rfkill watchdog -y
+# sudo apt-get install rfkill watchdog -y
 git clone git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
 cd linux-firmware
 sudo cp iwlwifi-9000-pu-b0-jf-b0-38.ucode /lib/firmware
@@ -71,7 +71,7 @@ sudo pkexec dmesg | grep -i video
 # sudo echo "deb http://deb.debian.org/debian buster-backports main contrib non-free" >> /etc/apt/sources.list
 # exit
 sudo apt-get update
-sudo apt-get install -t buster nvidia-driver firmware-misc-nonfree
+sudo apt-get install -t buster nvidia-driver
 sudo apt-get install -t buster-backports nvidia-driver firmware-misc-nonfree
 sudo reboot
 
