@@ -6,6 +6,9 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 sudo flatpak remotes # Flatpak synchronize
 sudo flatpak install filezilla geany libreoffice teams zoom -y
 
+# Install MSCore fonts:
+sudo apt-get install msttcorefonts
+
 # Install VirtualBox:
 cd ~/Downloads
 su # Change to root
