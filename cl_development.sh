@@ -4,14 +4,15 @@
 sudo swupd check-update
 sudo swupd update
 
+sudo swupd bundle-add audacious
 sudo swupd bundle-add firewalld
 
-sudo swupd search virt
-sudo swupd bundle-add virt-manager-gui
-sudo swupd bundle-add containers-virt
+sudo swupd bundle-add containers-basic
 sudo swupd bundle-add docker-compose
-sudo swupd bundle-add ansible
-sudo swupd bundle-add audacious
+sudo systemctl start docker
+
+# sudo swupd search virt
+
 sudo swupd diagnose
 
 # Microsoft Office:
