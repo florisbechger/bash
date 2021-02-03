@@ -7,6 +7,7 @@ sudo echo "[Time]" >> /etc/systemd/timesyncd.conf
 sudo echo "NTP=nts1.time.nl" >> /etc/systemd/timesyncd.conf
 sudo echo "FallbackNTP=ntp1.time.nl" >> /etc/systemd/timesyncd.conf
 sudo timedatectl set-ntp true
+sudo timedatectl timesync-status
 
 sudo swupd check-update
 sudo swupd update
