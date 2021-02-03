@@ -4,6 +4,8 @@
 sudo swupd check-update
 sudo swupd update
 
+sudo swupd bundle-add firewalld
+
 sudo swupd search virt
 sudo swupd bundle-add virt-manager-gui
 sudo swupd bundle-add containers-virt
@@ -24,4 +26,3 @@ flatpak run com.microsoft.Teams
 flatpak install flathub us.zoom.Zoom -y
 # To run this Flatpak app, enter:
 flatpak run us.zoom.Zoom
-
