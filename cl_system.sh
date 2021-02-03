@@ -3,9 +3,10 @@
 
 # Time/Date settings:
 sudo touch /etc/systemd/timesyncd.conf
+sudo timedatectl set-timezone Europe/Amsterdam
 sudo echo "[Time]" >> /etc/systemd/timesyncd.conf
-sudo echo "NTP=nts1.time.nl" >> /etc/systemd/timesyncd.conf
-sudo echo "FallbackNTP=ntp1.time.nl" >> /etc/systemd/timesyncd.conf
+sudo echo "NTP=0.nl.pool.ntp.org" >> /etc/systemd/timesyncd.conf
+sudo echo "FallbackNTP=1.nl.pool.ntp.org 2.nl.pool.ntp.org" >> /etc/systemd/timesyncd.conf
 sudo timedatectl set-ntp true
 sudo systemctl restart systemd-timesyncd
 sudo timedatectl timesync-status
