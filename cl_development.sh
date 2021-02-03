@@ -4,16 +4,17 @@
 sudo swupd check-update
 sudo swupd update
 
-sudo swupd bundle-add audacious
 sudo swupd bundle-add firewalld
+sudo systemctl mask iptables-restore ipset # Disable iptables and ipset services as they conflict with firewalld
+sudo mkdir /etc/firewalld
+sudo touch /etc/firewalld/firewalld.conf
+sudo systemctl enable firewalld
+sudo systemctl start firewalld
 
-sudo swupd bundle-add containers-basic
-sudo swupd bundle-add docker-compose
-sudo systemctl start docker
+sudo swupd bundle-add audacious
+sudo swupd diagnose
 
 # sudo swupd search virt
-
-sudo swupd diagnose
 
 # Microsoft Office:
 # Office365
