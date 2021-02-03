@@ -9,7 +9,8 @@ sudo echo "NTP=0.nl.pool.ntp.org" >> /etc/systemd/timesyncd.conf
 sudo echo "FallbackNTP=1.nl.pool.ntp.org 2.nl.pool.ntp.org" >> /etc/systemd/timesyncd.conf
 sudo timedatectl set-ntp true
 sudo systemctl restart systemd-timesyncd
-sudo timedatectl timesync-status
+sudo hwclock --systohc
+# sudo timedatectl timesync-status
 
 sudo swupd check-update
 sudo swupd update
