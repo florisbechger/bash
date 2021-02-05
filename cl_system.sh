@@ -24,6 +24,7 @@ sudo systemctl start firewalld
 
 sudo swupd bundle-add audacious
 sudo swupd diagnose
+sudo swupd clean
 
 # sudo swupd search virt
 
