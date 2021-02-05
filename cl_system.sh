@@ -1,5 +1,5 @@
 
-# Packages for ClearLinux
+# System Packages for ClearLinux
 
 # Time/Date settings:
 sudo touch /etc/systemd/timesyncd.conf
