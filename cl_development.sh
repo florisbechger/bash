@@ -1,11 +1,12 @@
 
-# Development Packages for vanilla ClearLinux on laptop
+# KVM on vanilla ClearLinux workstation
 
 # Install KVM for kernel and host:
 sudo swupd update # run update first
 sudo sudo swupd bundle-add kernel-kvm kvm-host # install bundles
 sudo usermod -G kvm -a [username] # add user to group kvm
 sudo systemctl enable libvirtd # enable libvirtd service
+sudo systemctl start libvirtd # start libvirtd service
 
 # Basic commands:
 sudo virsh list --all # verify which vm is running
@@ -18,7 +19,7 @@ sudo virsh shutdown [computername] # shutdown vm
 sudo virsh undefine --domain [computername] --storage /var/lib/libvirt/images/[computername].qcow2 --wipe-storage # delete vm & wipe disk
 sudo ls -la /var/lib/libvirt/images/ # verify
 
-# Bare-Server configuration
+# KVM Bare-Server configuration (not yet tested)
 
 # create kvm-network:
 sudo -i # change to root
