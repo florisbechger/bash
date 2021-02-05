@@ -22,7 +22,8 @@ sudo touch /etc/firewalld/firewalld.conf
 sudo systemctl enable firewalld
 sudo systemctl start firewalld
 
-sudo swupd bundle-add audacious
+sudo swupd bundle-add clr-network-troubleshooter # network tools
+sudo swupd bundle-add audacious # audio player
 sudo swupd diagnose
 sudo swupd clean
 
