@@ -1,8 +1,11 @@
 
-# System Packages for ClearLinux
+# REF: https://docs.01.org/clearlinux/latest/get-started/index.html
 
 # Enable thermal management daemon to prevent overheating:
 sudo systemctl enable --now thermald
+
+# Enable systemd-boot Menu:
+sudo clr-boot-manager set-timeout 5
 
 # Time/Date settings:
 sudo timedatectl set-timezone Europe/Amsterdam
@@ -11,6 +14,7 @@ sudo systemctl restart systemd-timesyncd
 sudo hwclock --systohc
 # sudo timedatectl timesync-status
 
+# System Bundles for ClearLinux:
 sudo swupd check-update
 sudo swupd update
 
