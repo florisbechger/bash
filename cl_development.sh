@@ -19,7 +19,7 @@ echo "Kind=bridge" >> /etc/systemd/network/br0.netdev
 echo "[Match]" > /etc/systemd/network/br0.network
 echo "Name=br0" >> /etc/systemd/network/br0.network
 echo "[Network]" >> /etc/systemd/network/br0.network
-echo "DHCP=no" >> /etc/systemd/network/br0.network
+echo "DHCP=yes" >> /etc/systemd/network/br0.network
 echo "Address=10.0.0.2/16" >> /etc/systemd/network/br0.network
 echo "Gateway=10.0.0.1" >> /etc/systemd/network/br0.network
 echo "DNS=10.0.0.1" >> /etc/systemd/network/br0.network
