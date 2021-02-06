@@ -30,7 +30,9 @@ sudo swupd bundle-add audacious # audio player
 sudo swupd diagnose
 sudo swupd clean
 
-# sudo swupd search virt
+# LibreOffice:
+sudo swupd bundle-add libreoffice
+
 
 # Microsoft Office:
 # Office365
