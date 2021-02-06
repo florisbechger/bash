@@ -1,6 +1,8 @@
 
 sudo apt-get update
-sudo apt-get install git gnome-power-manager htop lshw neofetch -y
+sudo apt-get install git gnome-power-manager htop lshw neofetch thermald -y
+sudo systemctl enable thermald
+sudo systemctl start thermald
 
 # System Information:
 sudo dmidecode -t01
