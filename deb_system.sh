@@ -1,6 +1,6 @@
 
 sudo apt-get update
-sudo apt-get install git gnome-power-manager htop lshw neofetch thermald -y
+sudo apt-get install gnome-power-manager htop lshw neofetch thermald -y
 sudo systemctl enable thermald
 sudo systemctl start thermald
 
@@ -24,7 +24,7 @@ sudo pkexec dmesg | grep -i wifi
 sudo pkexec dmesg | grep -i bluetooth
 
 # Driver firmware:
-# sudo apt-get install rfkill watchdog -y
+sudo apt-get install git -y
 git clone git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
 cd linux-firmware
 sudo cp iwlwifi-9000-pu-b0-jf-b0-38.ucode /lib/firmware
