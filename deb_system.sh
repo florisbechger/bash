@@ -34,12 +34,12 @@ sudo cp intel/ibt-17-16-1.* /lib/firmware/intel
 sudo mkdir /lib/firmware/i915
 sudo cp i915/glk_dmc_ver1_04.bin /lib/firmware/i915
 sudo cp i915/kbl_dmc_ver1_04.bin /lib/firmware/i915
-chmod +x /lib/firmware/i915/*_dmc_ver1_04.bin
+# chmod +x /lib/firmware/i915/*_dmc_ver1_04.bin
 sudo mkdir /lib/firmware/nvidia
 sudo mkdir /lib/firmware/nvidia/gp108
 sudo mkdir /lib/firmware/nvidia/gp108/gr
 sudo cp nvidia/gp108/gr/sw_nonctx.bin /lib/firmware/nvidia/gp108/gr
-chmod +x /lib/firmware/nvidia/gp108/gr/sw_nonctx.bin
+# chmod +x /lib/firmware/nvidia/gp108/gr/sw_nonctx.bin
 exit
 sudo reboot
 
