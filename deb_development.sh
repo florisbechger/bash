@@ -39,6 +39,7 @@ vagrant plugin list # verify install
 vagrant package --base debian --output debian.box
 vagrant box add --name debian.box /home/[Username]/Documents/Vagrant/debian.box
 vagrant box list # verify box
+vagrant -h # List all the flags the vagrant command accepts
 vagrant init # Create default Vagrantfile
 
 # Blacklist intel_kvm in order for VirtualBox to run correctly:
