@@ -23,7 +23,7 @@ sudo systemctl start fstrim.timer
 sudo pkexec dmesg | grep -i wifi
 sudo pkexec dmesg | grep -i bluetooth
 
-# Driver firmware:
+# Standard Driver firmware:
 sudo apt-get install git -y
 git clone git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
 su # change to root
@@ -35,13 +35,30 @@ sudo mkdir /lib/firmware/i915
 sudo cp i915/glk_dmc_ver1_04.bin /lib/firmware/i915
 sudo cp i915/kbl_dmc_ver1_04.bin /lib/firmware/i915
 ## chmod +x /lib/firmware/i915/*_dmc_ver1_04.bin
-# sudo mkdir /lib/firmware/nvidia
-# sudo mkdir /lib/firmware/nvidia/gp108
-# sudo mkdir /lib/firmware/nvidia/gp108/gr
-# sudo cp nvidia/gp108/gr/sw_nonctx.bin /lib/firmware/nvidia/gp108/gr
-## chmod +x /lib/firmware/nvidia/gp108/gr/sw_nonctx.bin
 exit
 sudo reboot
+
+# Identify video GPU(s):
+lspci | grep -E "VGA|3D"
+sudo lspci | grep VGA # Active GPU
+su
+# apt install nvidia-detect -y
+# nvidia-detect
+
+# Nvidia Quadro P520:
+sudo lshw -C video
+sudo pkexec dmesg | grep -i video
+sudo apt-get remove nvidia*
+sudo apt-get autoremove
+sudo apt-get install nvidia-detect
+sudo nvidia-detect
+sudo apt-get update
+sudo apt-get install -t buster nvidia-driver
+sudo reboot
+
+# Battery management:
+sudo apt-get install tlp -y
+sudo tlp start
 
 # Sensors:
 sudo apt-get install acpi lm-sensors -y
@@ -57,31 +74,6 @@ sudo echo "acpi -t" >> ~/.bashrc
 sudo echo "acpi -a" >> ~/.bashrc
 sudo echo "echo" >> ~/.bashrc
 sudo echo "neofetch" >> ~/.bashrc
-
-# Battery management:
-sudo apt-get install tlp -y
-sudo tlp start
-
-# Identify video GPU(s):
-lspci | grep -E "VGA|3D"
-sudo lspci | grep VGA # Active GPU
-su
-# apt install nvidia-detect -y
-# nvidia-detect
-
-# Nvidia Quadro P520:
-sudo lshw -C video
-sudo pkexec dmesg | grep -i video
-# su
-# sudo echo "deb http://deb.debian.org/debian buster-backports main contrib non-free" >> /etc/apt/sources.list
-# exit
-sudo apt-get remove nvidia*
-sudo apt-get autoremove
-sudo apt-get install nvidia-detect
-sudo nvidia-detect
-sudo apt-get update
-sudo apt-get install -t buster nvidia-driver
-sudo reboot
 
 # Low latency I/O for SATA ssd/hd:
 sudo apt-get install sysfsutils
