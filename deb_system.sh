@@ -75,9 +75,12 @@ sudo pkexec dmesg | grep -i video
 # su
 # sudo echo "deb http://deb.debian.org/debian buster-backports main contrib non-free" >> /etc/apt/sources.list
 # exit
+sudo apt-get remove nvidia*
+sudo apt-get autoremove
+sudo apt-get install nvidia-detect
+sudo nvidia-detect
 sudo apt-get update
 sudo apt-get install -t buster nvidia-driver
-sudo apt-get install -t buster-backports nvidia-driver firmware-misc-nonfree
 sudo reboot
 
 # Low latency I/O for SATA ssd/hd:
