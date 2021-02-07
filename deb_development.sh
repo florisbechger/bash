@@ -40,4 +40,11 @@ vagrant package --base debian --output debian.box
 vagrant box add --name debian.box /home/[Username]/Documents/Vagrant/debian.box
 vagrant box list # verify box
 
+# Blacklist intel_kvm in order for VirtualBox to run correctly:
+lsmod | grep kvm # list services
+su # Change to root
+echo 'blacklist kvm-intel' >> /etc/modprobe.d/blacklist.conf
+exit
+sudo reboot
+
 # Create a Vagrantfile
