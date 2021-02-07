@@ -82,3 +82,4 @@ echo "# block/nvme0n1/queue/scheduler = deadline" >> /etc/sysfs.conf # This is n
 firefox "https://linrunner.de/tlp/"
 firefox "https://wiki.debian.org/NVIDIA%20Optimus"
 firefox "https://wiki.debian.org/NvidiaGraphicsDrivers"
+firefox "https://linuxx.info/installing-nvidia-driver-in-debian-10"
