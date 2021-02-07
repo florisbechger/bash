@@ -23,6 +23,8 @@ sudo apt update
 sudo apt-get install virtualbox-6.1 -y
 mkdir ~/Documents/Virtualbox
 
+# Create a VM in VirtualBox (e.g. "debian")
+
 # Install Vagrant:
 cd ~/Downloads
 curl -O https://releases.hashicorp.com/vagrant/2.2.14/vagrant_2.2.14_x86_64.deb
