@@ -31,9 +31,9 @@ cd /home/[username]/linux-firmware
 sudo cp iwlwifi-9000-pu-b0-jf-b0-38.ucode /lib/firmware
 sudo mkdir /lib/firmware/intel
 sudo cp intel/ibt-17-16-1.* /lib/firmware/intel
-# sudo mkdir /lib/firmware/i915
-# sudo cp i915/glk_dmc_ver1_04.bin /lib/firmware/i915
-# sudo cp i915/kbl_dmc_ver1_04.bin /lib/firmware/i915
+sudo mkdir /lib/firmware/i915
+sudo cp i915/glk_dmc_ver1_04.bin /lib/firmware/i915
+sudo cp i915/kbl_dmc_ver1_04.bin /lib/firmware/i915
 ## chmod +x /lib/firmware/i915/*_dmc_ver1_04.bin
 # sudo mkdir /lib/firmware/nvidia
 # sudo mkdir /lib/firmware/nvidia/gp108
