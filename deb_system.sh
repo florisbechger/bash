@@ -39,11 +39,9 @@ exit
 sudo reboot
 
 # Identify video GPU(s):
-lspci | grep -E "VGA|3D"
+sudo lspci | grep -E "VGA|3D"
 sudo lspci | grep VGA # Active GPU
-su
-# apt install nvidia-detect -y
-# nvidia-detect
+sudo lspci -k | grep -EA2 "VGA|3D|Display"
 
 # Nvidia Quadro P520:
 sudo lshw -C video
