@@ -18,7 +18,7 @@ wget https://www.virtualbox.org/download/oracle_vbox_2016.asc
 sudo apt-key add oracle_vbox_2016.asc
 sudo apt update
 sudo apt-get install curl -y
-curl -O https://www.virtualbox.org/wiki/Downloads/virtualbox-6.1_6.1.16-140961~Debian~buster_amd64.deb
+curl -O https://www.virtualbox.org/wiki/Downloads/virtualbox-6.1_6.1.18-142142~Debian~buster_amd64.deb
 sudo apt update
 sudo apt-get install virtualbox-6.1 -y
 mkdir ~/Documents/Virtualbox
