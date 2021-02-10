@@ -1,4 +1,6 @@
-#!/bin/bash
+
+# centos installation packages:
+# http://linux.cs.uu.nl/centos/8-stream/BaseOS/x86_64/os/
 
 # upgrade all packages
 dnf upgrade -y
