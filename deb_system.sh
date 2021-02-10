@@ -59,6 +59,9 @@ sudo apt-get install tlp -y
 sudo systemctl enable tlp
 sudo systemctl start tlp
 
+# Firewall:
+sudo apt-get install firewalld firewall-config firewall-applet -y
+
 # Antivirus:
 sudo apt-get install clamav clamtk -y
 
