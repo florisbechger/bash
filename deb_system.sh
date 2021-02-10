@@ -56,7 +56,11 @@ sudo reboot
 
 # Battery management:
 sudo apt-get install tlp -y
-sudo tlp start
+sudo systemctl enable tlp
+sudo systemctl start tlp
+
+# Antivirus:
+sudo apt-get install clamav clamtk -y
 
 # Sensors:
 sudo apt-get install acpi lm-sensors -y
