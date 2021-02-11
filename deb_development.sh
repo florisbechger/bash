@@ -30,19 +30,7 @@ cd ~/Downloads
 curl -O https://releases.hashicorp.com/vagrant/2.2.14/vagrant_2.2.14_x86_64.deb
 sudo apt update
 sudo apt-get install ./vagrant_2.2.14_x86_64.deb -y
-mkdir ~/Documents/Vagrant
 exit
-
-# Create your own VM in VirtualBox, then make it your own .box for cloning:
-cd ~/Documents/Vagrant
-vagrant --version # verify version
-vagrant plugin install vagrant-disksize
-vagrant plugin list # verify install
-vagrant package --base debian --output debian.box
-vagrant box add --name debian.box /home/[Username]/Documents/Vagrant/debian.box
-vagrant box list # verify box
-vagrant -h # List all the flags the vagrant command accepts
-vagrant init # Create default Vagrantfile
 
 # Blacklist intel_kvm in order for VirtualBox to run correctly:
 lsmod | grep kvm # list services
