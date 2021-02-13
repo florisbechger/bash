@@ -14,7 +14,6 @@ sudo mv ~/Downloads/Juno-mirage/ /usr/share/themes/
 cd /usr/share/themes/
 sudo chown root:root Juno-mirage -R
 sudo gsettings set org.gnome.desktop.interface gtk-theme Juno-mirage
-sudo gsettings reset org.gnome.desktop.interface
 
 # Download Flatery-Dark icons
 ls -la ~/Downloads/ # list files
