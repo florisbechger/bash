@@ -1,10 +1,11 @@
 
 # Themes for Gnome
 # https://www.gnome-look.org
+
 # For this example:
 
 # Juno-mirage theme: https://www.pling.com/s/Gnome/p/1280977/
-# Flatery-Dark icons: https://github.com/cbrnix/Flatery
+# Flatery-Dark icons: https://www.pling.com/p/1332404/
 
 # Download Juno-mirage theme
 ls -la ~/Downloads/ # list files
