@@ -23,29 +23,6 @@ sudo systemctl start fstrim.timer
 sudo pkexec dmesg | grep -i wifi
 sudo pkexec dmesg | grep -i bluetooth
 
-
-
-# Thinkpad driver configuration:
-
-# Download:
-cd ~/Downloads
-wget https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/linux-firmware-20210208.tar.gz
-tar -xvf linux-firmware-20210208.tar.gz
-cd linux-firmware-20210208
-
-# Firmware:
-sudo cp iwlwifi-9000-pu-b0-jf-b0-34.ucode /lib/firmware
-sudo cp iwlwifi-9000-pu-b0-jf-b0-38.ucode /lib/firmware
-sudo cp iwlwifi-9000-pu-b0-jf-b0-41.ucode /lib/firmware
-sudo cp iwlwifi-9000-pu-b0-jf-b0-46.ucode /lib/firmware
-
-sudo mkdir /lib/firmware/intel
-sudo cp intel/ibt-17-16-1.* /lib/firmware/intel
-sudo mkdir /lib/firmware/i915
-sudo cp i915/*_dmc_ver1_04.* /lib/firmware/i915
-ls -la /lib/firmware/intel # check
-ls -la /lib/firmware/i915 # check
-
 # Battery management:
 sudo apt install tlp -y
 sudo systemctl enable tlp
@@ -77,6 +54,27 @@ sudo apt install sysfsutils
 su
 echo "# block/nvme0n1/queue/scheduler = deadline" >> /etc/sysfs.conf # This is not a sata-drive, this is a nvme-drive, so comment #
 exit
+
+# Thinkpad driver configuration:
+
+# Download:
+cd ~/Downloads
+wget https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/linux-firmware-20210208.tar.gz
+tar -xvf linux-firmware-20210208.tar.gz
+cd linux-firmware-20210208
+
+# Firmware:
+sudo cp iwlwifi-9000-pu-b0-jf-b0-34.ucode /lib/firmware
+sudo cp iwlwifi-9000-pu-b0-jf-b0-38.ucode /lib/firmware
+sudo cp iwlwifi-9000-pu-b0-jf-b0-41.ucode /lib/firmware
+sudo cp iwlwifi-9000-pu-b0-jf-b0-46.ucode /lib/firmware
+
+sudo mkdir /lib/firmware/intel
+sudo cp intel/ibt-17-16-1.* /lib/firmware/intel
+sudo mkdir /lib/firmware/i915
+sudo cp i915/*_dmc_ver1_04.* /lib/firmware/i915
+ls -la /lib/firmware/intel # check
+ls -la /lib/firmware/i915 # check
 
 # Identify video GPU(s):
 sudo lspci | grep -E "VGA|3D"
