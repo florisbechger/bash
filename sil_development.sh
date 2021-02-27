@@ -24,7 +24,7 @@ sudo rpm-ostree install cockpit-ostree cockpit cockpit-machines cockpit-podman c
 # sudo rpm-ostree install cockpit-storaged PackageKit
 
 # install qemu-kvm:
-sudo rpm-ostree install qemu-kvm libvirt libguestfs-tools virt-install rsync
+sudo rpm-ostree install qemu-kvm libvirt libguestfs-tools virt-install # rsync allready installed
 sudo systemctl enable libvirtd
 sudo systemctl start libvirtd
 sudo systemctl status libvirtd # verify install
