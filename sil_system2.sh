@@ -1,5 +1,5 @@
 
-# Fedora Workstation/Silverblue 33 - Install 2
+# Fedora Silverblue 33 - Install 2
 
 # install updates:
 sudo rpm-ostree refresh-md
