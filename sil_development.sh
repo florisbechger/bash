@@ -29,6 +29,16 @@ sudo systemctl enable libvirtd
 sudo systemctl start libvirtd
 sudo systemctl status libvirtd # verify install
 
+sudo virsh pool-list # list current storage pool
+sudo virsh pool-destroy default # destroy default storage pool
+sudo virsh pool-undefine default # undefine default storage pool
+
+mkdir /home/[username]/kvm # create kvm directory
+sudo virsh pool-define-as --name default --type dir --target /home/[username]/kvm # re-define default storage pool
+sudo virsh pool-autostart default # autostart default storage pool
+sudo virsh pool-start default # start default storage pool
+sudo virsh pool-list # list current storage pool
+
 # install vagrant:
 sudo rpm-ostree install vagrant
 
