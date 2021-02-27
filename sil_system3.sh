@@ -2,12 +2,14 @@
 # Fedora Silverblue 33 - Install 3
 
 # enable Thermals:
-sudo systemctl enable thermald
-sudo systemctl start thermald
+sudo systemctl status thermald
+# sudo systemctl enable thermald
+# sudo systemctl start thermald
 
 # enable Battery management:
-sudo systemctl enable tlp
-sudo systemctl start tlp
+sudo systemctl status tlp
+# sudo systemctl enable tlp
+# sudo systemctl start tlp
 
 # remove obsolete versions:
 sudo rpm-ostree status
