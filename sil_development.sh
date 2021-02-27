@@ -1,6 +1,9 @@
 
 # Fedora Silverblue 33 - Development
 
+# refresh repositories:
+sudo rpm-ostree refresh-md
+
 # check toolbox, create and enter your first container:
 toolbox
 toolbox list
@@ -42,8 +45,11 @@ sudo virsh pool-list # list current storage pool
 sudo systemctl restart libvirtd
 sudo systemctl status libvirtd
 
-# install vagrant:
-sudo rpm-ostree install vagrant
+# install vagrant: (not tested)
+toolbox create -c vagrant
+toolbox enter vagrant
+sudo dnf install vagrant # install vagrant
+vagrant --version # verify vagrant
 
 # install the vagrant libvirtd plugin:
 vagrant plugin install vagrant-libvirt
