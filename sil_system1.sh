@@ -6,6 +6,10 @@ sudo setenforce Permissive
 sudo sed -i 's/SELINUX=enforcing/SELINUX=permissive/g' /etc/selinux/config
 sestatus -v 
 
+# Set hostname:
+sudo hostnamectl set-hostname [name][.local]
+
+# Sync hardware clock:
 sudo hwclock -w
 
 # disable automatic updates:
@@ -29,11 +33,13 @@ sudo chronyc makestep
 sudo chronyc sources
 sudo chronyc -N authdata
 
+# Enable Wayland:
 sudo nano /etc/gdm/custom.conf
+
 # Add following lines:
 [deamon]
-WaylandEnable=false
-DefaultSession=gnome-xorg.desktop
+#WaylandEnable=false
+#DefaultSession=gnome-xorg.desktop
 
 # intel microcode:
 dmesg | grep microcode
