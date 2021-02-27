@@ -17,28 +17,6 @@ sudo rpm-ostree cleanup -r
 sudo rpm-ostree cleanup -b
 sudo rpm-ostree cleanup -m
 
-# check toolbox and enter your first container:
-toolbox
-toolbox list
-toolbox create -c Test -y # Create Test
-# toolbox enter -c Test
-toolbox rm -f Test -y # Remove Test
-# toolbox rm --force Test
-
-# flatpak packages:
-sudo flatpak install fedora geany libreoffice -y
-sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-sudo flatpak remotes
-sudo flatpak install flathub audacious filezilla mediawriter teams zoom -y
-
-# install flatpak updates:
-# sudo flatpak remotes
-# sudo flatpak update
-
-# cockpit package:
-sudo rpm-ostree install cockpit-ostree cockpit cockpit-machines cockpit-podman cockpit-selinux virt-viewer
-# sudo rpm-ostree install cockpit-storaged PackageKit
-
 # sudo firewall-cmd --get-default-zone
 sudo firewall-cmd --permanent --zone=FedoraWorkstation --add-service=cockpit
 sudo firewall-cmd --reload
