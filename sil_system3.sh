@@ -1,6 +1,13 @@
-#!/bin/bash
 
-# Fedora Workstation/Silverblue 33 - Install 3
+# Fedora Silverblue 33 - Install 3
+
+# enable Thermals:
+sudo systemctl enable thermald
+sudo systemctl start thermald
+
+# enable Battery management:
+sudo systemctl enable tlp
+sudo systemctl start tlp
 
 # remove obsolete versions:
 sudo rpm-ostree status
