@@ -25,7 +25,7 @@ sudo rpm-ostree install https://download1.rpmfusion.org/free/fedora/rpmfusion-fr
 # sudo rpm-ostree rebase fedora:fedora/33/x86_64/silverblue
 
 # install extra packages:
-sudo rpm-ostree install constantine-backgrounds verne-backgrounds-gnome firewall-config gnome-tweak-tool gparted htop NetworkManager-tui neofetch tlp # thermald allready installed
+sudo rpm-ostree install NetworkManager-tui clamav clamtk constantine-backgrounds firewall-config gnome-tweak-tool gparted htop neofetch simple-scan system-config-printer tlp verne-backgrounds-gnome
 
 # create shortcuts:
 # SUPER - B Browser (Firefox)
