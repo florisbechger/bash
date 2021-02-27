@@ -39,6 +39,9 @@ sudo virsh pool-autostart default # autostart default storage pool
 sudo virsh pool-start default # start default storage pool
 sudo virsh pool-list # list current storage pool
 
+sudo systemctl restart libvirtd
+sudo systemctl status libvirtd
+
 # install vagrant:
 sudo rpm-ostree install vagrant
 
