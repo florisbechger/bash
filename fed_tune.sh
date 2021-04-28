@@ -25,7 +25,7 @@ sudo echo 'net.ipv4.tcp_sack = 1' >> /etc/sysctl.conf
 sudo echo 'net.ipv4.tcp_no_metrics_save = 1' >> /etc/sysctl.conf
 
 # Set maximum number of packets, queued on the INPUT side, when the interface receives packets faster than kernel can process them:
-echo 'net.core.netdev_max_backlog = 5000' >> /etc/sysctl.conf
+sudo echo 'net.core.netdev_max_backlog = 5000' >> /etc/sysctl.conf
 
 # Reload the changes:
 sudo sysctl -p
