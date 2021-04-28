@@ -1,5 +1,5 @@
 
-# Fedora minimal-install + standard
+# Fedora 34
 
 # As root:
 su
@@ -15,7 +15,7 @@ sudo echo "deltarpm=True" >> /etc/dnf/dnf.conf
 # Chrony configuration:
 sudo cp /etc/chrony.conf chrony.bak
 sudo sed -i 's/driftfile/#driftfile/g' /etc/chrony.conf
-sudo sed -i 's/local stratum 10/local stratum 8/g' /etc/chrony.conf
+sudo sed -i 's/#local stratum 10/local stratum 8/g' /etc/chrony.conf
 sudo systemctl restart chronyd
 sudo chronyc makestep
 sudo chronyc sources
@@ -26,10 +26,10 @@ sudo dnf distro-sync -y
 sudo dnf group install hardware-support -y
 
 # Default splash screen:
-sudo plymouth-set-default-theme --list # list themes
-sudo plymouth-set-default-theme # current theme
-sudo dnf install plymouth-theme-spinfinity -y
-sudo plymouth-set-default-theme spinfinity -R
+# sudo plymouth-set-default-theme --list # list themes
+# sudo plymouth-set-default-theme # current theme
+# sudo dnf install plymouth-theme-spinfinity -y
+# sudo plymouth-set-default-theme spinfinity -R
 
 # As user:
 su [user]
