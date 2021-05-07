@@ -46,9 +46,7 @@ sudo systemctl restart libvirtd
 sudo systemctl status libvirtd
 
 # install vagrant: (not tested)
-toolbox create -c vagrant
-toolbox enter vagrant
-sudo dnf install vagrant # install vagrant
+sudo rpm-ostree install vagrant # install vagrant
 vagrant --version # verify vagrant
 
 # install the vagrant libvirtd plugin:
