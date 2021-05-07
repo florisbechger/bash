@@ -1,5 +1,5 @@
 
-# Fedora Silverblue 33 - Install 3
+# Fedora Silverblue 34 - Install 3
 
 # enable Thermals:
 sudo systemctl status thermald
