@@ -17,42 +17,40 @@ sudo systemctl stop rpm-ostreed-automatic.service
 sudo systemctl disable rpm-ostreed-automatic.service
 
 # enable SSD trim:
-sudo systemctl start fstrim.timer
-sudo systemctl enable fstrim.timer
+# sudo systemctl start fstrim.timer
+# sudo systemctl enable fstrim.timer
 
 # DNF configuration:
+su
 sudo echo "fastestmirror=True" >> /etc/rpm-ostreed.conf
 sudo echo "deltarpm=True" >> /etc/rpm-ostreed.conf
 
 # Chrony configuration:
-sudo cp /etc/chrony.conf chrony.bak
 sudo sed -i 's/driftfile/#driftfile/g' /etc/chrony.conf
-sudo sed -i 's/local stratum 10/local stratum 8/g' /etc/chrony.conf
+sudo sed -i 's/#local stratum 10/local stratum 8/g' /etc/chrony.conf
 sudo systemctl restart chronyd
 sudo chronyc makestep
 sudo chronyc sources
 sudo chronyc -N authdata
 
 # Enable Wayland:
-sudo nano /etc/gdm/custom.conf
+# sudo nano /etc/gdm/custom.conf
 
-# Add following lines:
-[deamon]
+# Change default Wayland to Xorg:
+# [deamon]
 #WaylandEnable=false
 #DefaultSession=gnome-xorg.desktop
 
 # intel microcode:
-dmesg | grep microcode
+# dmesg | grep microcode
 # sudo rpm-ostree install iucode-tool # do not install!!
 
-# update to version 34:
+# update to version 35:
 # ostree remote list
-# sudo ostree remote gpg-import fedora -k /etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-34-primary
-# sudo rpm-ostree rebase fedora:fedora/34/x86_64/silverblue
+# sudo ostree remote gpg-import fedora -k /etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-35-primary
+# sudo rpm-ostree rebase fedora:fedora/35/x86_64/silverblue
 
 # Journal configuration:
-sudo cp /etc/systemd/journald.conf journal.bak
-cd /etc/systemd/
 sudo sed -i 's/#SystemMaxUse=/SystemMaxUse=100M/g' /etc/systemd/journald.conf
 sudo sed -i 's/#SystemMaxFileSize=/SystemMaxFileSize=100M/g' /etc/systemd/journald.conf
 sudo sed -i 's/#SystemMaxFiles=/SystemMaxFiles=/g' /etc/systemd/journald.conf
