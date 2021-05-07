@@ -1,5 +1,5 @@
 
-# Fedora Silverblue 33 - Install 1
+# Fedora Silverblue 34 - Install 1
 
 # check status SE-Linux:
 sudo setenforce Permissive
