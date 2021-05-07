@@ -10,7 +10,7 @@ sudo rpm-ostree upgrade distro-sync
 sudo rpm-ostree override remove ibus-hangul
 sudo rpm-ostree override remove ibus-libzhuyin
 sudo rpm-ostree override remove ibus-libpinyin
-sudo rpm-ostree override remove ibus-kkc
+# sudo rpm-ostree override remove ibus-kkc
 # sudo rpm-ostree override remove ibus-anthy
 
 # check running version:
