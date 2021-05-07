@@ -13,10 +13,10 @@ toolbox rm -f Test -y # Remove Test
 # toolbox rm --force Test
 
 # install flatpak packages:
+flatpak list
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 sudo flatpak remotes
-sudo flatpak install fedora geany libreoffice -y
-sudo flatpak install flathub audacious filezilla mediawriter teams zoom -y
+sudo flatpak install flathub audacious filezilla geany mediawriter zoom -y
 
 # install flatpak updates:
 # sudo flatpak remotes
