@@ -30,7 +30,6 @@ sudo rpm-ostree install NetworkManager-tui clamav clamtk constantine-backgrounds
 
 # create shortcuts:
 # SUPER - B Browser (Firefox)
-# SUPER - F Search
 # SUPER - H Files (Home)
 # SUPER - T Terminal (gnome-terminal)
 
